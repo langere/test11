@@ -24,7 +24,7 @@ def create_table():
 create_table()
 
 # 获取所有玩家数据的路由
-@app.route('http://127.0.0.1:5000/api/players', methods=['GET'])
+@app.route('/http://127.0.0.1:5000/api/players', methods=['GET'])
 def get_players():
     conn = sqlite3.connect('game.db')
     cursor = conn.cursor()
@@ -44,7 +44,7 @@ def get_players():
     return jsonify(players_data)
 
 # 保存玩家数据的路由（假设前端传来包含昵称、总游戏次数、成功游戏次数等信息的数据）
-@app.route('http://127.0.0.1:5000/api/players', methods=['POST'])
+@app.route('/http://127.0.0.1:5000/api/players', methods=['POST'])
 def save_player():
     try:
         data = request.get_json()
